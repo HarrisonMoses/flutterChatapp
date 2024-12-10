@@ -1,3 +1,4 @@
+import 'package:chatapp/Auth/Authservice.dart';
 import 'package:chatapp/components/Button_compo.dart';
 import 'package:chatapp/components/textfield_compo.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,33 @@ class RegisterPage extends StatelessWidget {
   });
 
   //Login function
-  void register() {}
+  void register( BuildContext context) {
+    //register function
+    final auth = AuthService();
+if(_passwordController.text == _comfirmController.text){
+  try{
+    auth.signUpWithEmailPassword(_emailController.text, _passwordController.text,);
+
+  }catch(e){
+     showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(e.toString()),
+          ),
+        );
+  }
+
+}else{
+      showDialog(
+        context: context,
+        builder: (context) => const AlertDialog(
+          title:  Text("Password does not match"),
+        ),
+      );
+}
+
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +90,7 @@ class RegisterPage extends StatelessWidget {
               // login button
               Buttomcompo(
                 text: "Rerister",
-                onTap: register,
+                onTap: ()=>register(context),
               ),
               const SizedBox(height: 20),
 
