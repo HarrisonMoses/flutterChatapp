@@ -17,7 +17,9 @@ Future<UserCredential> signInWithEmailPassword(String email, password) async{
 //signup
 
 //signout
-
+Future<void> signOut() async{
+  await _auth.signOut();
+}
 // errors
 
 }
