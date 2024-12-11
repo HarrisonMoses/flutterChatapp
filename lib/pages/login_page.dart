@@ -1,6 +1,6 @@
 import 'package:chatapp/components/Button_compo.dart';
 import 'package:chatapp/components/textfield_compo.dart';
-import 'package:chatapp/Auth/Authservice.dart';
+import 'package:chatapp/services/Auth/Authservice.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
