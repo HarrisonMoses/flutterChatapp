@@ -82,7 +82,7 @@ if(_passwordController.text == _comfirmController.text){
               const SizedBox(height: 20),
               // comfirm password textfield
               Textfield(
-                hintText: "Comfirm Password",
+                hintText: "Confirm Password",
                 controller: _comfirmController,
               ),
               const SizedBox(height: 20),

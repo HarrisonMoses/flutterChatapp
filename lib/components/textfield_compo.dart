@@ -11,7 +11,7 @@ class Textfield extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: TextField(
         controller: controller,
-        obscureText: hintText == "Password" ? true : false,
+        obscureText: hintText == "Password" || hintText == "Confirm Password" ? true : false,
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: TextStyle(
