@@ -42,7 +42,10 @@ class Homepage extends StatelessWidget {
           //data
           return ListView(
             children: snapshot.data!.map<Widget>((user) {
-              return UserTile(
+              
+              if(user['email'] != _auth.getCurrentUser()!.email){
+                return UserTile(
+
                 text: user['email'],
                 onTap: () {
                   //navigate to chat screen
@@ -56,6 +59,8 @@ class Homepage extends StatelessWidget {
                   );
                 },
               );
+              }
+              return Container(); // Add this line to ensure a Widget is always returned
             }).toList(),
           );
         });
